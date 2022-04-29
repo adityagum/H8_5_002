@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="templates/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project 1 Deployment</title>
+</head>
+
+<body>
+    <center>
+        <div class="card">
+            <h1>Uber and Lyft Price Prediction</h1>
+            <br>
+        </div>
+    </center>
+
+    <div class="img"></div>
+    <form class="form" action="{{ url_for('predict') }}" method="post">
+        <h2>Distance</h2>
+        <input class="text" name="distance" value="0.0">
+
+        <h2>Surge_Multiplier</h2>
+        <input class="text" name="surge_multiplier" value="0.0">
+
+        <h2>Uber Black</h2>
+        <select class="location" name="Uber Black">
+            <option value="0.0" disabled="disabled" selected="selected"></option>
+            <option>0.0</option>
+            <option>1.0</option>
+        </select>
+
+        <h2>Uber Black SUV</h2>
+        <select class="location" name="Uber Black SUV">
+            <option value="" disabled="disabled" selected="selected"> </option>
+            <option>0.0</option>
+            <option>1.0</option>
+        </select>
+
+        <h2>Lyft LUX</h2>
+        <select class="location" name="Lyft LUX">
+            <option value="" disabled="disabled" selected="selected"> </option>
+            <option>0.0</option>
+            <option>1.0</option>
+        </select>
+
+        <h2>Lyft Lux Black</h2>
+        <select class="location" name="Lyft Lux Black">
+            <option value="" disabled="disabled" selected="selected"> </option>
+            <option>0.0</option>
+            <option>1.0</option>
+        </select>
+
+        <h2>Lyft Lux Black XL</h2>
+        <select class="location" name="Lyft Lux Black XL">
+            <option value="" disabled="disabled" selected="selected"> </option>
+            <option>0.0</option>
+            <option>1.0</option>
+        </select>
+
+        <h2>Lyft</h2>
+        <select class="location" name="Lyft">
+            <option value="" disabled="disabled" selected="selected"> </option>
+            <option>0.0</option>
+            <option>1.0</option>
+        </select>
+
+        <h2>Lyft XL</h2>
+        <select class="location" name="Lyft XL">
+            <option value="" disabled="disabled" selected="selected"> </option>
+            <option>0.0</option>
+            <option>1.0</option>
+        </select>
+
+        <h2>Lyft Shared</h2>
+        <select class="location" name="Lyft Shared">
+            <option value="" disabled="disabled" selected="selected"> </option>
+            <option>0.0</option>
+            <option>1.0</option>
+        </select>
+
+        <h2>Uber Pool</h2>
+        <select class="location" name="Uber Pool">
+            <option value="" disabled="disabled" selected="selected"> </option>
+            <option>0.0</option>
+            <option>1.0</option>
+        </select>
+
+        <h2>Uber X</h2>
+        <select class="location" name="Uber X">
+            <option value="" disabled="disabled" selected="selected"> </option>
+            <option>0.0</option>
+            <option>1.0</option>
+        </select>
+
+        <h2>Uber XL</h2>
+        <select class="location" name="Uber XL">
+            <option value="" disabled="disabled" selected="selected"> </option>
+            <option>0.0</option>
+            <option>1.0</option>
+        </select>
+
+        <h2>Uber WAV</h2>
+        <select class="location" name="Uber WAV">
+            <option value="" disabled="disabled" selected="selected"> </option>
+            <option>0.0</option>
+            <option>1.0</option>
+        </select>
+
+        <button class="submit" type="submit">Estimate Price</button>
+
+        <div id="uiEstimatedPrice" class="result">
+            <h3>{{prediction_text}}</h2>
+        </div>
+    </form>
+</body>
+
+</html>
+
