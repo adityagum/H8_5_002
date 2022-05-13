@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/all.min.css" />
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/css/tooplate-style.css" />
+    <link rel="stylesheet" href="static/css/Style.css">
+
+  </head>
+
+  <body>
+    <!-- page header -->
+    <div class="container" id="home">
+      <div class="col-12 text-center">
+        <div class="tm-page-header">
+          <h1 class="d-inline-block text-uppercase">Prediksi Curah Hujan di Australia</h1>
+        </div>
+      </div>
+    </div>
+    <!-- navbar -->
+    <div class="tm-nav-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="navbar navbar-expand-md navbar-light">
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#tmMainNav"
+                aria-controls="tmMainNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="tmMainNav">
+                <ul class="navbar-nav mx-auto tm-navbar-nav">
+                  
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Banner -->
+    <section class="tm-banner-section" id="tmVideoSection">
+      <div class="container tm-banner-text-container">
+        <div class="row">
+          <div class="col-12">
+            <header>
+              <h2 class="tm-banner-title">PYTN_KampusMerdeka_05_Kelompok3_FinalProject2</h2>
+              <p class="mx-auto tm-banner-subtitle">
+                <b>Melakukan Prediksi apakah besok akan terjadi hujan atau tidak, berdasarkan kondisi cuaca hari ini</b>
+              </p>
+            </header>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video -->
+      <video id="hero-vid" autoplay="" loop="" muted>
+        <source src="static/videos/city-night-blur-01.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+    <!-- Features -->
+    <div class="container tm-features-section" id="features">
+      <div class="row tm-features-row">
+        <section class="col-md-6 col-sm-12 tm-feature-block">
+        </section>
+      </div>
+    </div>
+
+    <!-- Activities -->
+    <h1><center>Silahkan masukan nilai pada Form dibawah ini</center></h1>
+    <div class="login">
+      <form id="contact" action="{{ url_for('predict') }}" method="POST">
+        <fieldset>
+          <input type="text" name="mintemp" placeholder="Masukan nilai Minimum Temperature" tabindex="1" required autofocus />
+      </fieldset>
+
+      <fieldset>
+          <input type="text" name="rainfall" placeholder="Masukan nilai Curah Hujan (in mm)" tabindex="2" required >
+      </fieldset>
+
+      <fieldset>
+          <input type="text" name="windgustdir" placeholder="Masukan nilai arah angin" tabindex="3" required >
+      </fieldset>
+
+      <fieldset>
+          <input type="text" name="windgustspeed" placeholder="Masukan nilai kecepatan angin" tabindex="4" required>
+      </fieldset>
+      
+      <fieldset>
+          <input type="text" name="windir9" placeholder="Masukan nilai arah angin pada jam 9 pagi" tabindex="4" required>
+      </fieldset>
+
+      <fieldset>
+          <input type="text" name="windir3" placeholder="Masukan nilai arah angin pada jam 3 sore" tabindex="4" required>
+      </fieldset>
+
+      <fieldset>
+          <input type="text" name="windspeed9" placeholder="Masukan nilai kecepatan angin pada jam 9 pagi" tabindex="4" required>
+      </fieldset>
+
+      <fieldset>
+          <input type="text" name="windspeed3" placeholder="Masukan nilai kecepatanangin pada jam 3 sore" tabindex="4" required>
+      </fieldset>
+
+      <fieldset>
+          <input type="text" name="humidity9" placeholder="Ketikkan Humidity percentation at 9 AM" tabindex="5" required>
+      </fieldset>
+
+      <fieldset>
+          <input type="text" name="humidity3" placeholder="Ketikkan Humidity percentation at 3 PM" tabindex="6" required>
+      </fieldset>
+      <div style="text-align:center">
+      <fieldset>
+        <select name="raintoday" required>
+          <option value="" disabled selected>Apakah hari ini hujan?</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+      </fieldset>
+      
+      <fieldset>
+        <select name="location" required>
+          <option value="" disabled selected>Silahkan pilih lokasi</option>
+          <option value="0">Adelaide</option>
+          <option value="1">Albury</option>
+          <option value="2">AliceSprings</option>
+          <option value="3">Badgerys Creek</option>
+          <option value="4">Ballarat</option>
+          <option value="5">Bendigo</option>
+          <option value="6">Brisbane</option>
+          <option value="7">Cairns</option>
+          <option value="8">Canberra</option>
+          <option value="9">Cobar</option>
+          <option value="10">Coffs Harbour</option>
+          <option value="11">Dartmoor</option>
+          <option value="12">Darwin</option>
+          <option value="13">Gold Coast</option>
+          <option value="14">Hobart</option>
+          <option value="15">Katherine</option>
+          <option value="16">Launceston</option>
+          <option value="17">Melbourne</option>
+          <option value="18">Melbourne Airport</option>
+          <option value="19">Mildura</option>
+          <option value="20">Moree</option>
+          <option value="21">Mount Gambier</option>
+          <option value="22">Mount Ginini</option>
+          <option value="23">Nhil</option>
+          <option value="24">Norah Head</option>
+          <option value="25">Norfolk Island</option>
+          <option value="26">Nuriootpa</option>
+          <option value="27">Pearce RAAF</option>
+          <option value="28">Perth</option>
+          <option value="29">Perth Airport</option>
+          <option value="30">Portland</option>
+          <option value="31">Richmond</option>
+          <option value="32">Sale</option>
+          <option value="33">Sydney</option>
+          <option value="34">Sydney Airport</option>
+          <option value="35">Townsville</option>
+          <option value="36">Tuggeranong</option>
+          <option value="37">Uluru</option>
+          <option value="38">Wagga Wagga</option>
+          <option value="39">Walpole</option>
+          <option value="40">Watsonia</option>
+          <option value="41">Williamtown</option>
+          <option value="42">Witchcliffe</option>
+          <option value="43">Wollongong</option>
+          <option value="44">Woomera</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <select name="metode" required>
+          <option value="" disabled selected>Metode Apa yang akan digunakan:</option>
+            <option value="1">Logistic Regression</option>
+            <option value="2">Support Vector Machine</option>
+        </select>
+      </fieldset>
+
+      </div>
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Prediksi</button>
+      </fieldset>
+      </form>
+    </div>
+
+
+    <footer class="container tm-footer">
+      <div class="row tm-footer-row">
+        <p class="col-md-10 col-sm-12 mb-0">
+          1. Aditya Gumilar - PYTN-KS05-002<br>
+          2. Muhammad Rezky Hamesi Akhyar - PYTN-KS05-007<br>
+          3. Muhammad Rizaldi - PYTN-KS05-009<br>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
