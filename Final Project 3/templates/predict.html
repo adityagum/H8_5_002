@@ -1,0 +1,27 @@
+<html>
+
+<link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
+
+<body background="{{url_for('static', filename='heart.png')}}">
+    <div class="description">
+        <center>
+            <p class="title-keterangan">Hasil Prediksi</p>
+
+            {%if prediction == 1%}
+            <p class="patient-non-risk">Pasien pengidap gagal jantung Diprediksi <b class="non-risk">MENINGGAL</b></p>
+
+            {%elif prediction == 0%}
+            <p class="patient-have-risk">Pasien pengidap gagal jantung Diprediksi <b class="have-risk">TIDAK AKAN MENINGGAL</b></p>
+
+            {%else%}
+            <p class="patient-have-risk">Prediksi tidak valid</p>
+
+            {%endif%}
+           
+            <br><br>
+            <a href='/' class="kembali">Kembali</a>
+        </center>
+    </div>
+</body>
+
+</html>
